@@ -92,6 +92,8 @@ if __name__ == '__main__':
         Classroom = each["cdmc"]
         Teacher = each["xm"]
         week = each["zcd"][:-1]
+        while not ('0' <= week[-1] <= '9'):  # 剪掉后面的所有中文
+            week = week[:-1]
         week = week + "-" + week[0]  # 避免某课程只上一周导致的异常
         weekday = each["xqj"]
         LessonTime = each["jcor"]
